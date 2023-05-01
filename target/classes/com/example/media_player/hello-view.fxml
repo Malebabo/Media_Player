@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+
+<VBox fx:id="parentVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="556.0" stylesheets="@../../../styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.media_player.HelloController">
+   <children>
+      <HBox fx:id="mainScreen" prefHeight="321.0" prefWidth="600.0">
+         <children>
+            <VBox fx:id="mediaOptions" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="buttVideo11" layoutX="30.0" layoutY="196.0" mnemonicParsing="false" onAction="#homeScreen" />
+                  <Button fx:id="buttVideo1" layoutX="30.0" layoutY="327.0" mnemonicParsing="false" onAction="#functionality" />
+                  <Button fx:id="buttVideo" mnemonicParsing="false" onAction="#functionality" />
+               </children></VBox>
+            <VBox fx:id="mediaPlaySpace" prefHeight="320.0" prefWidth="501.0">
+               <children>
+                  <HBox fx:id="header" prefHeight="53.0" prefWidth="501.0">
+                     <children>
+                        <ImageView fx:id="headerIcon" fitHeight="53.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/mediabutt.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="headerTitle" text="Media Player" />
+                     </children>
+                  </HBox>
+                  <VBox fx:id="mediaViewVBox" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <MediaView fx:id="mediaView" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children></HBox>
+      <VBox fx:id="controls" prefHeight="82.0" prefWidth="600.0">
+         <children>
+            <HBox fx:id="firstControls" prefHeight="29.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="currentTime" text="00:00" />
+                  <Slider fx:id="durationSlider" />
+                  <Label fx:id="totalTime" text="00:00" />
+               </children>
+            </HBox>
+            <HBox fx:id="secondControls" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <HBox fx:id="leftControls" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="stop" mnemonicParsing="false" onAction="#stop" />
+                        <Label fx:id="labelVolume" />
+                        <Slider fx:id="volumeSlider" max="1.0" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="midControls" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="back" mnemonicParsing="false" onAction="#skipback" />
+                        <Button fx:id="butt_playpause" mnemonicParsing="false" />
+                        <Button fx:id="forward" layoutX="50.0" layoutY="20.0" mnemonicParsing="false" onAction="#skipForward" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="rightControls" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="speed" text="1X" />
+                        <Label fx:id="labelSpeed" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>
